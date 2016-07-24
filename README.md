@@ -13,7 +13,7 @@
 <p>&nbsp;Material Design and animations. TODO</p>
 </li>
 <li>
-<p>&nbsp;Unit and instrumentation tests. IN PROGRESS</p>
+<p>&nbsp;Unit and instrumentation tests. </p>
 </li>
 </ul>
 <p>&nbsp;</p>
