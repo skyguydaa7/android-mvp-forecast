@@ -10,10 +10,13 @@
 <p>ContentProviders - Local caching. TODO</p>
 </li>
 <li>
-<p>&nbsp;Material Design and animations. TODO</p>
+<p>Material Design and animations. TODO</p>
 </li>
 <li>
-<p>&nbsp;Unit and instrumentation tests. </p>
+<p>GeoLocation. LastKnowLocation and LocationListener.</p>
+</li>
+<li>
+<p>Unit and instrumentation tests.&nbsp;</p>
 </li>
 </ul>
 <p>&nbsp;</p>
