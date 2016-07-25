@@ -1,8 +1,8 @@
-package com.lbbento.geoforecast.geoforecast.data.source;
+package com.lbbento.geoforecast.data.datasource;
 
 import android.support.annotation.NonNull;
 
-import com.lbbento.geoforecast.geoforecast.data.ForecastModel;
+import com.lbbento.geoforecast.data.entity.ForecastModel;
 
 import rx.Observable;
 

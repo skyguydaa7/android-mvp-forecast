@@ -39,7 +39,7 @@ public class MainActivity extends BaseActivity {
 
     private void initializeInjectors() {
         this.forecastComponent = DaggerForecastComponent.builder()
-                .appComponent(getAppComponent())
+
                 .forecastModule(new ForecastModule(getApplicationContext()))
                 .build();
     }

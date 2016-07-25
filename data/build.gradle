@@ -1,39 +1,49 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 apply plugin: 'com.neenbedankt.android-apt'
+
 
 android {
     compileSdkVersion 24
     buildToolsVersion "24.0.0"
+
     defaultConfig {
-        applicationId "com.lbbento.geoforecast.geoforecast"
         minSdkVersion 14
         targetSdkVersion 24
         versionCode 1
         versionName "1.0"
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
     }
+
     buildTypes {
 
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            buildConfigField "String", "API_ENDPOINT", "\"https://api.forecast.io/\""
+            buildConfigField "String", "API_KEY", "\"5cf7f41d8149fcc46eafc7fa9f623aba\""
         }
         debug {
+            buildConfigField "String", "API_ENDPOINT", "\"https://api.forecast.io/\""
+            buildConfigField "String", "API_KEY", "\"5cf7f41d8149fcc46eafc7fa9f623aba\""
         }
 
+    }
+
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        disable 'InvalidPackage'  // Some libraries have issues with this
+        disable 'OldTargetApi'    // Due to Robolectric that modifies the manifest when running tests
     }
 }
 
 dependencies {
-    compile project(':data')
-
-    compile fileTree(include: ['*.jar'], dir: 'libs')
-
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.1.1'
-    compile 'com.android.support.constraint:constraint-layout:1.0.0-alpha4'
     testCompile 'junit:junit:4.12'
 
     compile 'com.google.dagger:dagger:2.5'
@@ -44,11 +54,8 @@ dependencies {
     compile 'com.squareup.retrofit2:converter-gson:2.0.2'
     compile 'com.squareup.retrofit2:adapter-rxjava:2.0.2'
 
-    compile 'com.jakewharton:butterknife:8.2.1'
-    apt 'com.jakewharton:butterknife-compiler:8.2.1'
 
     compile 'io.reactivex:rxandroid:1.2.1'
     compile 'io.reactivex:rxjava:1.1.6'
-
-
+    compile 'javax.inject:javax.inject:1'
 }

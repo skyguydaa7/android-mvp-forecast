@@ -4,8 +4,8 @@ import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.lbbento.geoforecast.geoforecast.data.ForecastModel;
-import com.lbbento.geoforecast.geoforecast.data.source.ForecastRepository;
+import com.lbbento.geoforecast.data.entity.ForecastModel;
+import com.lbbento.geoforecast.data.repository.ForecastRepository;
 
 import javax.inject.Inject;
 

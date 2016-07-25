@@ -6,9 +6,9 @@ package com.lbbento.geoforecast.geoforecast.forecast;
 
 import android.location.Location;
 
+import com.lbbento.geoforecast.data.entity.ForecastModel;
 import com.lbbento.geoforecast.geoforecast.base.BaseFragmentContract;
 import com.lbbento.geoforecast.geoforecast.base.BasePresenterContract;
-import com.lbbento.geoforecast.geoforecast.data.ForecastModel;
 
 /**
  * This specifies the methods that have to be implemented between view and presenter

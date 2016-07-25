@@ -1,6 +1,6 @@
-package com.lbbento.geoforecast.geoforecast.api;
+package com.lbbento.geoforecast.data.source.remote.api;
 
-import com.lbbento.geoforecast.geoforecast.data.ForecastModel;
+import com.lbbento.geoforecast.data.entity.ForecastModel;
 
 import retrofit2.http.GET;
 import retrofit2.http.Path;

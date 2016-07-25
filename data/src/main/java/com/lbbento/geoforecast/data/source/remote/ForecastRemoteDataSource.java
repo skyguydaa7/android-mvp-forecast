@@ -1,15 +1,15 @@
-package com.lbbento.geoforecast.geoforecast.data.source.remote;
+package com.lbbento.geoforecast.data.source.remote;
 
 import android.support.annotation.NonNull;
 
-import com.lbbento.geoforecast.geoforecast.BuildConfig;
-import com.lbbento.geoforecast.geoforecast.api.ForecastAPIService;
-import com.lbbento.geoforecast.geoforecast.api.ServiceGenerator;
-import com.lbbento.geoforecast.geoforecast.data.ForecastModel;
-import com.lbbento.geoforecast.geoforecast.data.source.ForecastDataSource;
-import com.lbbento.geoforecast.geoforecast.di.PerFragment;
+import com.lbbento.geoforecast.data.BuildConfig;
+import com.lbbento.geoforecast.data.datasource.ForecastDataSource;
+import com.lbbento.geoforecast.data.entity.ForecastModel;
+import com.lbbento.geoforecast.data.source.remote.api.ForecastAPIService;
+import com.lbbento.geoforecast.data.source.remote.api.ServiceGenerator;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import rx.Observable;
 import rx.android.schedulers.AndroidSchedulers;
@@ -18,7 +18,7 @@ import rx.schedulers.Schedulers;
 /**
  * Created by lbbento on 30/06/2016.
  */
-@PerFragment
+@Singleton
 public class ForecastRemoteDataSource implements ForecastDataSource {
 
 

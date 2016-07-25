@@ -1,8 +1,8 @@
-package com.lbbento.geoforecast.geoforecast.api;
+package com.lbbento.geoforecast.data.source.remote.api;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
-import com.lbbento.geoforecast.geoforecast.BuildConfig;
+import com.lbbento.geoforecast.data.BuildConfig;
 
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
@@ -25,6 +25,7 @@ public class ServiceGenerator {
 
 
     public static <S> S createService(Class<S> serviceClass) {
+
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         OkHttpClient client;

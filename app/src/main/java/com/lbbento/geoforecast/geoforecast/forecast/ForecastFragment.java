@@ -14,9 +14,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.lbbento.geoforecast.geoforecast.base.BaseFragment;
+import com.lbbento.geoforecast.data.entity.ForecastModel;
 import com.lbbento.geoforecast.geoforecast.R;
-import com.lbbento.geoforecast.geoforecast.data.ForecastModel;
+import com.lbbento.geoforecast.geoforecast.base.BaseFragment;
 import com.lbbento.geoforecast.geoforecast.main.MainActivity;
 import com.lbbento.geoforecast.geoforecast.util.LocationUtil;
 

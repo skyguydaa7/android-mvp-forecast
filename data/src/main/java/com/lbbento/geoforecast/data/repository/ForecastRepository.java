@@ -1,33 +1,28 @@
-package com.lbbento.geoforecast.geoforecast.data.source;
+package com.lbbento.geoforecast.data.repository;
 
 import android.support.annotation.NonNull;
-import android.support.annotation.Nullable;
 
-import com.lbbento.geoforecast.geoforecast.data.ForecastModel;
-import com.lbbento.geoforecast.geoforecast.data.source.local.ForecastLocalDataSource;
-import com.lbbento.geoforecast.geoforecast.data.source.remote.ForecastRemoteDataSource;
-import com.lbbento.geoforecast.geoforecast.di.PerFragment;
-
-import java.util.LinkedHashMap;
-import java.util.Map;
+import com.lbbento.geoforecast.data.datasource.ForecastDataSource;
+import com.lbbento.geoforecast.data.entity.ForecastModel;
+import com.lbbento.geoforecast.data.source.local.ForecastLocalDataSource;
+import com.lbbento.geoforecast.data.source.remote.ForecastRemoteDataSource;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
 
 import rx.Observable;
-import rx.functions.Action1;
 import rx.functions.Func1;
 
 
 /**
  * Created by lbbento on 30/06/2016.
  */
-@PerFragment
+@Singleton
 public class ForecastRepository implements ForecastDataSource {
 
     private final ForecastDataSource mForecastRemoteDataSource;
 
     private final ForecastDataSource mForecastLocalDataSource;
-
 
     @Inject
     public ForecastRepository(@NonNull ForecastRemoteDataSource forecastRemoteDataSource,
