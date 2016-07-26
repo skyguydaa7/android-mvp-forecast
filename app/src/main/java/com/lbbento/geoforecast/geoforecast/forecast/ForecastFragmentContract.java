@@ -6,7 +6,7 @@ package com.lbbento.geoforecast.geoforecast.forecast;
 
 import android.location.Location;
 
-import com.lbbento.geoforecast.data.entity.ForecastModel;
+import com.lbbento.geoforecast.data.model.ForecastModel;
 import com.lbbento.geoforecast.geoforecast.base.BaseFragmentContract;
 import com.lbbento.geoforecast.geoforecast.base.BasePresenterContract;
 

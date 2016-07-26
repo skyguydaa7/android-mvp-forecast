@@ -1,4 +1,4 @@
-package com.lbbento.geoforecast.data.entity;
+package com.lbbento.geoforecast.data.model;
 
 /**
  * Created by lbbento on 25/07/2016.

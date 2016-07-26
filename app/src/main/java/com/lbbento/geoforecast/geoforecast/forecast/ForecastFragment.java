@@ -14,9 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.lbbento.geoforecast.data.entity.ForecastModel;
+import com.lbbento.geoforecast.data.model.ForecastModel;
 import com.lbbento.geoforecast.geoforecast.R;
 import com.lbbento.geoforecast.geoforecast.base.BaseFragment;
+import com.lbbento.geoforecast.geoforecast.di.component.ForecastComponent;
 import com.lbbento.geoforecast.geoforecast.main.MainActivity;
 import com.lbbento.geoforecast.geoforecast.util.LocationUtil;
 
@@ -35,9 +36,7 @@ public class ForecastFragment extends BaseFragment implements ForecastFragmentCo
     @BindView(R.id.swipeRefresh) SwipeRefreshLayout swipeRefreshLayout;
 
 
-    @Inject
-    protected ForecastFragmentPresenter mPresenter;
-    LocationManager locationManager;
+    @Inject protected ForecastFragmentPresenter mPresenter;
 
 
     public ForecastFragment() { }
@@ -73,9 +72,17 @@ public class ForecastFragment extends BaseFragment implements ForecastFragmentCo
         super.onCreate(savedInstanceState);
 
         //Injection
-        ((MainActivity)this.getActivity()).getForecastComponent().inject(this);
+        this.getForecastComponent().inject(this);
 
 
+    }
+
+    /**
+     * Gets a component for dependency injection by its type.
+     */
+    @SuppressWarnings("unchecked")
+    protected ForecastComponent getForecastComponent() {
+        return ((MainActivity) getActivity()).getForecastComponent();
     }
 
     @Override

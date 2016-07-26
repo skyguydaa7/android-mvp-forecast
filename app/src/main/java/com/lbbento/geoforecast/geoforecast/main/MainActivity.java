@@ -6,11 +6,12 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 
-import com.lbbento.geoforecast.geoforecast.base.BaseActivity;
 import com.lbbento.geoforecast.geoforecast.R;
+import com.lbbento.geoforecast.geoforecast.base.BaseActivity;
 import com.lbbento.geoforecast.geoforecast.di.component.DaggerForecastComponent;
 import com.lbbento.geoforecast.geoforecast.di.component.ForecastComponent;
 import com.lbbento.geoforecast.geoforecast.di.module.ForecastModule;
+import com.lbbento.geoforecast.geoforecast.di.module.NetModule;
 import com.lbbento.geoforecast.geoforecast.forecast.ForecastFragment;
 import com.lbbento.geoforecast.geoforecast.util.MyPermissions;
 
@@ -39,8 +40,8 @@ public class MainActivity extends BaseActivity {
 
     private void initializeInjectors() {
         this.forecastComponent = DaggerForecastComponent.builder()
-
-                .forecastModule(new ForecastModule(getApplicationContext()))
+                .appComponent(getAppComponent())
+                .forecastModule(new ForecastModule())
                 .build();
     }
 
@@ -79,4 +80,6 @@ public class MainActivity extends BaseActivity {
             }
         }
     }
+
+
 }

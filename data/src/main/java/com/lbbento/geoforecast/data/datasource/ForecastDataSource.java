@@ -2,7 +2,7 @@ package com.lbbento.geoforecast.data.datasource;
 
 import android.support.annotation.NonNull;
 
-import com.lbbento.geoforecast.data.entity.ForecastModel;
+import com.lbbento.geoforecast.data.model.ForecastModel;
 
 import rx.Observable;
 

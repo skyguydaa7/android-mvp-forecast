@@ -4,7 +4,7 @@ import android.support.annotation.NonNull;
 
 import com.lbbento.geoforecast.data.BuildConfig;
 import com.lbbento.geoforecast.data.datasource.ForecastDataSource;
-import com.lbbento.geoforecast.data.entity.ForecastModel;
+import com.lbbento.geoforecast.data.model.ForecastModel;
 import com.lbbento.geoforecast.data.source.remote.api.ForecastAPIService;
 import com.lbbento.geoforecast.data.source.remote.api.ServiceGenerator;
 
@@ -18,22 +18,16 @@ import rx.schedulers.Schedulers;
 /**
  * Created by lbbento on 30/06/2016.
  */
-@Singleton
 public class ForecastRemoteDataSource implements ForecastDataSource {
 
+    ForecastAPIService mForecastAPIService;
 
-    // Prevent direct instantiation.
-    @Inject
-    public ForecastRemoteDataSource() {}
+    public ForecastRemoteDataSource(ForecastAPIService forecastAPIService) {
+        this.mForecastAPIService = forecastAPIService;
+    }
 
     @Override
     public Observable<ForecastModel> getForecast(@NonNull String latitude, @NonNull String longitude) {
-
-
-        //Creates service
-        final ForecastAPIService mForecastAPIService =
-                ServiceGenerator.createService(ForecastAPIService.class);
-
 
         return mForecastAPIService
                 .getForecast(BuildConfig.API_KEY, latitude+","+longitude)

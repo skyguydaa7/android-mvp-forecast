@@ -4,7 +4,7 @@ import android.location.Location;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
-import com.lbbento.geoforecast.data.entity.ForecastModel;
+import com.lbbento.geoforecast.data.model.ForecastModel;
 import com.lbbento.geoforecast.data.repository.ForecastRepository;
 
 import javax.inject.Inject;
@@ -29,7 +29,6 @@ public class ForecastFragmentPresenter implements ForecastFragmentContract.Prese
     @Nullable
     private Subscription mSubscription = Subscriptions.empty();
 
-    @Inject
     public ForecastFragmentPresenter(@NonNull ForecastRepository forecastRepository) {
         mForecastRepository = forecastRepository;
     }

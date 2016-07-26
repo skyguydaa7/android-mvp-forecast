@@ -3,11 +3,10 @@ package com.lbbento.geoforecast.data.repository;
 import android.support.annotation.NonNull;
 
 import com.lbbento.geoforecast.data.datasource.ForecastDataSource;
-import com.lbbento.geoforecast.data.entity.ForecastModel;
-import com.lbbento.geoforecast.data.source.local.ForecastLocalDataSource;
-import com.lbbento.geoforecast.data.source.remote.ForecastRemoteDataSource;
+import com.lbbento.geoforecast.data.model.ForecastModel;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 import javax.inject.Singleton;
 
 import rx.Observable;
@@ -17,16 +16,14 @@ import rx.functions.Func1;
 /**
  * Created by lbbento on 30/06/2016.
  */
-@Singleton
 public class ForecastRepository implements ForecastDataSource {
 
     private final ForecastDataSource mForecastRemoteDataSource;
 
     private final ForecastDataSource mForecastLocalDataSource;
 
-    @Inject
-    public ForecastRepository(@NonNull ForecastRemoteDataSource forecastRemoteDataSource,
-                            @NonNull ForecastLocalDataSource forecastLocalDataSource) {
+    public ForecastRepository(@NonNull ForecastDataSource forecastRemoteDataSource,
+                            @NonNull ForecastDataSource forecastLocalDataSource) {
         mForecastRemoteDataSource = forecastRemoteDataSource;
         mForecastLocalDataSource = forecastLocalDataSource;
     }

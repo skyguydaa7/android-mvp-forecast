@@ -4,6 +4,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.lbbento.geoforecast.data.BuildConfig;
 
+import javax.inject.Inject;
+
 import okhttp3.OkHttpClient;
 import retrofit2.Retrofit;
 import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
@@ -15,26 +17,14 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ServiceGenerator {
 
-    private static Gson gson = new GsonBuilder().create();
+    Retrofit mRetrofit;
 
-    private static Retrofit.Builder builder =
-            new Retrofit.Builder()
-                    .baseUrl(BuildConfig.API_ENDPOINT)
-                    .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
-                    .addConverterFactory(GsonConverterFactory.create(gson));
+    public ServiceGenerator(Retrofit retrofit) {
+        this.mRetrofit = retrofit;
+    }
 
-
-    public static <S> S createService(Class<S> serviceClass) {
-
-
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        OkHttpClient client;
-
-        client = httpClient.build();
-
-        Retrofit retrofit = builder.client(client).build();
-
-        return retrofit.create(serviceClass);
+    public <S> S createService(Class<S> serviceClass) {
+        return mRetrofit.create(serviceClass);
     }
 
 
